@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int arr[2][3]={1,2,3,4,5,7};
+    // row wise 
+    
+    for(int i=0;i<2;i++){
+        int rsum=0;
+        for(int j=0;j<3;j++){
+            rsum+=arr[i][j];
+        }
+        cout<<rsum<<" ";
+        
+    }
+    cout<<endl;
+    //colum wise
+    
+    for(int j=0;j<3;j++){
+        int csum=0;
+        for(int i=0;i<2;i++){
+            csum+=arr[i][j];
+        }
+        cout<<csum<<" ";
+    }
+}
