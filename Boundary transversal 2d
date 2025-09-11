@@ -1,0 +1,37 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+    int m,n;
+    cout<<"enter size of row:";
+    cin>>m;
+    cout<<"enter size of col:";
+    cin>>n;
+    vector<vector<int>>arr(m,vector<int>(n));
+    for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+            cin>>arr[i][j];
+        }
+    }
+    int minr=0; int maxr=m-1;
+    int minc=0; int maxc=n-1;
+     //left to right
+     for(int j=minc;j<=maxc;j++){
+        cout<<arr[minr][j]<<" ";
+     }
+     //top to bottom
+     for(int i=minr+1;i<=maxr;i++){
+        cout<<arr[i][maxc]<<" ";
+
+     }
+     if(minr<maxr)
+    //right to left
+    for(int j=maxc-1;j>=minc;j--){
+        cout<<arr[maxr][j]<<" ";
+    }
+    if(minc<maxc)
+    //bottom to top 
+    for(int i=maxr-1;i>minr;i++){
+        cout<<arr[i][minc]<<" ";
+    }
+}
